@@ -3,194 +3,592 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Villa Romagnoli - Storia di un Casale | Documenti</title>
-    <meta name="description" content="Documenti integrativi del libro Storia di un Casale - Villa Romagnoli di Federico Romagnoli">
+    <title>Villa Romagnoli - Storia di un Casale | Documenti Digitali</title>
+    <meta name="description" content="Repository digitale del libro 'Storia di un Casale - Villa Romagnoli' di Federico Romagnoli. Documenti storici, mappe e materiali integrativi.">
+    <meta property="og:title" content="Villa Romagnoli - Storia di un Casale">
+    <meta property="og:description" content="Documenti digitali del libro di Federico Romagnoli">
+    
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --bg-light: #ecf0f1;
+            --text-dark: #333;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
         body { 
             font-family: Georgia, serif; 
-            max-width: 900px; 
-            margin: 0 auto; 
-            padding: 20px; 
+            margin: 0;
+            padding: 0;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-dark);
+            background: #f8f9fa;
         }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
         h1 { 
-            color: #2c3e50; 
-            border-bottom: 3px solid #3498db; 
-            padding-bottom: 10px; 
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 2em;
         }
-        h2 { 
-            color: #34495e; 
-            margin-top: 40px;
-            border-bottom: 1px solid #ecf0f1;
-            padding-bottom: 5px;
+        
+        .book-info {
+            font-size: 0.9em;
+            color: #666;
         }
-        h3 {
-            color: #7f8c8d;
-            margin-top: 25px;
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
         }
-        ul { 
-            list-style-type: none; 
-            padding-left: 0; 
+        
+        .hero h2 {
+            margin: 0 0 20px 0;
+            font-size: 2.5em;
         }
-        li { 
-            margin: 12px 0; 
-            padding-left: 20px;
+        
+        .hero p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 20px;
         }
-        a { 
-            color: #3498db; 
-            text-decoration: none; 
+        
+        .quick-links {
+            background: white;
+            padding: 40px 0;
+            margin: -40px 0 40px 0;
+            position: relative;
+            box-shadow: var(--shadow);
         }
-        a:hover { 
-            text-decoration: underline; 
-            color: #2980b9;
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
-        .intro { 
-            background: #ecf0f1; 
-            padding: 25px; 
-            border-radius: 8px; 
-            margin: 25px 0;
-            border-left: 4px solid #3498db;
-        }
-        .section { 
-            margin: 40px 0; 
-            background: #fff;
+        
+        .link-card {
+            background: var(--bg-light);
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
         }
-        .avviso {
+        
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .link-card h3 {
+            color: var(--primary-color);
+            margin: 10px 0;
+        }
+        
+        .instructions {
             background: #fff3cd;
             border: 1px solid #ffeaa7;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 40px 0;
         }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+        
+        .main-content {
+            background: white;
+            padding: 40px 0;
+            margin: 40px 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .section {
+            margin: 40px 0;
+        }
+        
+        .section h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .section h3 {
+            color: var(--primary-color);
+            margin: 25px 0 15px 0;
+        }
+        
+        .document-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .document-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .document-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .doc-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .doc-link:hover {
+            color: var(--accent-color);
+        }
+        
+        .external-link::after {
+            content: " ↗";
+            font-size: 0.8em;
+        }
+        
         footer {
-            margin-top: 60px; 
-            padding-top: 20px; 
-            border-top: 2px solid #ecf0f1; 
-            text-align: center; 
-            color: #7f8c8d;
+            background: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+            margin-top: 80px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        
+        .btn:hover {
+            background: var(--accent-color);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 1.8em;
+            }
+            
+            .header-content {
+                text-align: center;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Storia di un Casale - Villa Romagnoli</h1>
-        <div class="intro">
-            <strong>Documenti e materiali integrativi del libro di Federico Romagnoli</strong><br>
-            ISBN: 9798286399109<br>
-            Prima Edizione: Giugno 2025<br>
-            DOI: <a href="https://doi.org/10.5281/zenodo.15592593">10.5281/zenodo.15592593</a>
+        <div class="container">
+            <div class="header-content">
+                <h1>Villa Romagnoli - Storia di un Casale</h1>
+                <div class="book-info">
+                    <strong>Federico Romagnoli</strong><br>
+                    ISBN: 9798286399109 | DOI: 10.5281/zenodo.15592593
+                </div>
+            </div>
         </div>
     </header>
 
-    <div class="avviso">
-        <strong>Nota:</strong> Questa pagina raccoglie i documenti citati nel libro "Storia di un Casale - Villa Romagnoli". 
-        I documenti sono organizzati per capitolo e tipologia per facilitarne la consultazione.
+    <div class="hero">
+        <div class="container">
+            <h2>Documenti Digitali</h2>
+            <p>Repository completo dei documenti storici, mappe e materiali citati nel libro<br>
+            "Storia di un Casale - Villa Romagnoli: Dalle origini all'Unità d'Italia"</p>
+            <p><em>Prima Edizione: Giugno 2025</em></p>
+        </div>
     </div>
-    
-    <main>
-        <section class="section">
-            <h2>📜 Documenti per Capitolo</h2>
-            
-            <h3>Capitolo 1 - L'Età Antica</h3>
-            <ul>
-                <li>• <a href="documenti/antinori/p390-urna-memmia.pdf">Ritrovamento urna Memmia vicino Villa Romagnuolo (Antinori, p. 390)</a></li>
-                <li>• <a href="documenti/antinori/p389-391-villa-romana.pdf">Villa romana dei Cesia a S. Maria Imbaro (Antinori, pp. 389-391)</a></li>
-            </ul>
-            
-            <h3>Capitolo 2 - Il Medioevo</h3>
-            <ul>
-                <li>• <a href="mappe/sciarretta/1180-territorio-disabitato.jpg">Mappa territorio disabitato (1180)</a></li>
-                <li>• <a href="mappe/sciarretta/1320-casale-santa-vittoria.jpg">Mappa con Casale S. Vittoria (1320)</a></li>
-                <li>• <a href="mappe/sciarretta/1447-territorio-disabitato.jpg">Mappa territorio nuovamente disabitato (1447)</a></li>
-                <li>• <a href="documenti/antinori/p392-chiesa-santandrea.pdf">Fondazione chiesa S. Andrea (1316) - Antinori p. 392</a></li>
-                <li>• <a href="documenti/antinori/p383-castello-belvedere.pdf">Il perduto castello di Belvedere - Antinori p. 383</a></li>
-            </ul>
-            
-            <h3>Capitolo 3 - L'Età Moderna</h3>
-            <ul>
-                <li>• <a href="documenti/catasti/1618-preonciario-completo.pdf">Catasto pre-onciario di Lanciano (1618)</a></li>
-                <li>• <a href="documenti/catasti/1618-estratto-romagnolo.pdf">Famiglie "Romagnolo" nel catasto 1618</a></li>
-                <li>• <a href="documenti/catasti/1618-estratto-mozzagrogni.pdf">Famiglie "Mozzagrogni" nel catasto 1618</a></li>
-                <li>• <a href="documenti/antinori/p387-giovanni-mazzograsso.pdf">Villa di Giovanni Tommaso Mazzograsso (Antinori p. 387)</a></li>
-                <li>• <a href="documenti/vari/regi-tabulari-1573.pdf">Regi Tabulari 1573 (da Carabba p. 211)</a></li>
-                <li>• <a href="documenti/pacichelli/1703-bonagnoli.pdf">Pacichelli - menzione di "Bonagnoli" (1703, p. 9)</a></li>
-                <li>• <a href="mappe/sciarretta/1648-villa-separata.jpg">Mappa Villa separata di Lanciano (1648)</a></li>
-                <li>• <a href="documenti/catasti/1743-onciario-mozzagrogna.pdf">Catasto onciario Villa Mozzagrogna (1743)</a></li>
-                <li>• <a href="documenti/atti/1742-richiesta-catasto-separato.pdf">Richiesta catasto separato da Lanciano (1742)</a></li>
-            </ul>
-            
-            <h3>Capitolo 4 - L'Età Contemporanea</h3>
-            <ul>
-                <li>• <a href="mappe/1808-atlante-regno-napoli.jpg">Atlante geografico Regno di Napoli - Area Lanciano (1808)</a></li>
-                <li>• <a href="mappe/sciarretta/evoluzione-toponimi-1816.jpg">Evoluzione toponimi pre/post 1816</a></li>
-                <li>• <a href="documenti/atti/1782-muzzini-cappella.pdf">Estinzione prestito Cappella S. Vittoria e S. Gennaro (1782)</a></li>
-            </ul>
-            
-            <h3>Capitolo 5 - Le Origini dei Romagnoli</h3>
-            <ul>
-                <li>• <a href="documenti/atti/1719-de-luca-silvestro-romagnoli.pdf">Dichiarazione genealogica di Silvestro Romagnoli (1719)</a></li>
-                <li>• <a href="appendici/origini-romagnoli-area-frentana.pdf">"Le origini dei Romagnoli nell'area frentana" (F. Romagnoli)</a></li>
-            </ul>
-        </section>
 
-        <section class="section">
-            <h2>🗺️ Collezione Mappe Storiche</h2>
-            <ul>
-                <li>• <a href="mappe/raccolta-sciarretta.pdf">Evoluzione territoriale 1180-1860 (A. Sciarretta)</a></li>
-                <li>• <a href="mappe/1808-rizzi-zannoni-hd.jpg">Atlante Rizzi Zannoni - Alta risoluzione</a></li>
-                <li>• <a href="https://gallica.bnf.fr/ark:/12148/btv1b53177632g/f1.item.zoom" target="_blank">Mappa Pacichelli 1703 (link esterno)</a></li>
-            </ul>
-        </section>
+    <div class="quick-links">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 30px;">Accesso Rapido</h2>
+            <div class="links-grid">
+                <div class="link-card">
+                    <h3>📜 Atti Notarili</h3>
+                    <p>Documenti del 1719, 1742, 1782</p>
+                    <a href="#atti-notarili" class="btn">Vai agli atti</a>
+                </div>
+                <div class="link-card">
+                    <h3>🗺️ Mappe Storiche</h3>
+                    <p>Collegamenti a mappe online</p>
+                    <a href="#mappe" class="btn">Vai alle mappe</a>
+                </div>
+                <div class="link-card">
+                    <h3>📚 Fonti Antinori</h3>
+                    <p>Pagine dell'opera del 1790</p>
+                    <a href="#antinori" class="btn">Vai ai documenti</a>
+                </div>
+                <div class="link-card">
+                    <h3>📊 Catasti Storici</h3>
+                    <p>Documenti del 1618</p>
+                    <a href="#catasti" class="btn">Vai ai catasti</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <section class="section">
-            <h2>📚 Fonti Primarie Digitalizzate</h2>
-            <ul>
-                <li>• <a href="fonti/antinori-1790-ville-lanciano.pdf">A.L. Antinori - Sezione Ville di Lanciano (pp. 383-392)</a></li>
-                <li>• <a href="fonti/antinori-1782-schiavoni.pdf">A.L. Antinori - Memorie istoriche sugli Schiavoni (1782)</a></li>
-                <li>• <a href="fonti/pacichelli-1703-estratto.pdf">G.B. Pacichelli - Regno di Napoli in prospettiva (1703)</a></li>
-            </ul>
-        </section>
+    <main class="container">
+        <div class="instructions">
+            <h3>📖 Come utilizzare questo repository</h3>
+            <p><strong>Per i lettori del libro:</strong></p>
+            <ol>
+                <li>Trova il riferimento nel libro (es: "Antinori, p. 390")</li>
+                <li>Cerca il documento corrispondente in questa pagina</li>
+                <li>Clicca sul link per visualizzare o scaricare il documento</li>
+            </ol>
+        </div>
 
-        <section class="section">
-            <h2>🖼️ Galleria Fotografica</h2>
-            <ul>
-                <li>• <a href="foto/chiesa-san-rocco-1944.jpg">Chiesa di S. Rocco dopo i bombardamenti (1944)</a></li>
-                <li>• <a href="foto/chiesa-vittoria-costruzione.jpg">Costruzione chiesa M. SS. della Vittoria (1855-1860)</a></li>
-                <li>• <a href="foto/villa-romagnoli-panorama.jpg">Vista panoramica di Villa Romagnoli</a></li>
-            </ul>
-        </section>
+        <div class="main-content">
+            <section class="section" id="atti-notarili">
+                <h2>📜 Atti Notarili</h2>
+                
+                <ul class="document-list">
+                    <li>
+                        <a href="documenti/atti/1719 (De Luca) - Silvestro Romagnoli (dichiarazione).pdf" class="doc-link">
+                            <strong>1719</strong> - Dichiarazione genealogica di Silvestro Romagnoli (Notaio Berardo De Luca)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documenti/atti/1742 (Muzzini T) - Cittadini di Mozzagrogna e S. M. Imbaro per indipendenza sul Catasto del 1743.pdf" class="doc-link">
+                            <strong>1742</strong> - Richiesta di catasto separato da Lanciano (Notaio T. Muzzini)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documenti/atti/1782 (Muzzini T) - Silvestro Romagnoli di Stefano vs S M Vittoria e S Gennaro.pdf" class="doc-link">
+                            <strong>1782</strong> - Estinzione prestito Cappella S. Vittoria e S. Gennaro (Notaio T. Muzzini)
+                        </a>
+                    </li>
+                </ul>
+            </section>
 
-        <section class="section">
-            <h2>📖 Appendici e Materiali Integrativi</h2>
-            <ul>
-                <li>• <a href="appendici/bibliografia-annotata.pdf">Bibliografia completa con note</a></li>
-                <li>• <a href="appendici/glossario.pdf">Glossario dei termini storici</a></li>
-                <li>• <a href="appendici/cronologia.pdf">Cronologia comparata degli eventi (1180-1861)</a></li>
-                <li>• <a href="appendici/albero-genealogico-romagnoli.pdf">Albero genealogico famiglia Romagnoli (da Silvestro, 1650)</a></li>
-                <li>• <a href="appendici/trascrizioni-atti.pdf">Trascrizioni complete degli atti notarili</a></li>
-            </ul>
-        </section>
+            <section class="section" id="antinori">
+                <h2>📚 Documenti Antinori</h2>
+                <p><em>Pagine da "Antichità della Regione Frentana" (1790)</em></p>
+                
+                <ul class="document-list">
+                    <li>
+                        <a href="fonti/antinori/383.jpg" class="doc-link">
+                            <strong>Pagina 383</strong> - Il perduto castello di Belvedere
+                        </a>
+                    </li>
+                    <li>
+                        <a href="fonti/antinori/384.jpg" class="doc-link">
+                            <strong>Pagina 384</strong> - Cappellani della Chiesa di S. Andrea (1374-1393)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="fonti/antinori/387.jpg" class="doc-link">
+                            <strong>Pagina 387</strong> - Villa di Giovanni Tommaso Mazzograsso (1528-1595)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="fonti/antinori/388.jpg" class="doc-link">
+                            <strong>Pagina 388</strong> - Chiesa di S. Rocco e popolazione delle Ville (1595)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="fonti/antinori/389.jpg" class="doc-link">
+                            <strong>Pagina 389</strong> - Villa romana dei Cesia a Santa Maria Imbaro
+                        </a>
+                    </li>
+                    <li>
+                        <a href="fonti/antinori/390.jpg" class="doc-link">
+                            <strong>Pagina 390</strong> - Ritrovamento urna cineraria "OSSA MEMMI⸮" presso Villa Romagnuolo
+                        </a>
+                    </li>
+                    <li>
+                        <a href="fonti/antinori/391.jpg" class="doc-link">
+                            <strong>Pagina 391</strong> - Chiesa di Santa Maria Imbaro e dipendenza da Chieti
+                        </a>
+                    </li>
+                    <li>
+                        <a href="fonti/antinori/392.jpg" class="doc-link">
+                            <strong>Pagina 392</strong> - Fondazione Chiesa S. Andrea nel Casale S. Vittoria (1316)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="fonti/antinori/Antonio Ludovico Antinori e gli Schiavoni.pdf" class="doc-link">
+                            <strong>Gli Schiavoni</strong> - Estratto sulle popolazioni slave nell'area frentana
+                        </a>
+                    </li>
+                </ul>
+            </section>
 
-        <section class="section">
-            <h2>🔗 Risorse Esterne</h2>
-            <ul>
-                <li>• <a href="http://www.asciatopo.altervista.org/sanvito.html" target="_blank">Antonio Sciarretta - Geo-storia Costa dei Trabocchi</a></li>
-                <li>• <a href="https://giosamenna.wordpress.com/2020/01/06/il-basso-sangro-in-una-cartografia-del-1702-osservazioni-e-note-storiche-parte-i/" target="_blank">Giosia Menna - Il Basso Sangro in una cartografia del 1702</a></li>
-                <li>• <a href="https://www.gruppoarcheologicokr.it/biblioteca/g-a-rizzi-zannoni-atlante-geografico-del-regno-di-napoli-tavola-n-31-1808/" target="_blank">Atlante completo Rizzi Zannoni (1808)</a></li>
-                <li>• <a href="https://it.wikipedia.org/wiki/Storia_di_Lanciano" target="_blank">Wikipedia - Storia di Lanciano</a></li>
-                <li>• <a href="https://catalogo.beniculturali.it/detail/ArchitecturalOrLandscapeHeritage/1600377037" target="_blank">Palazzo Mozzagrugno - Lucera</a></li>
-            </ul>
-        </section>
+            <section class="section" id="catasti">
+                <h2>📊 Catasti Storici</h2>
+                
+                <h3>Catasto Pre-onciario (1618)</h3>
+                <ul class="document-list">
+                    <li>
+                        <a href="documenti/catasti/Ville del Catasto Onciario 1618.jpg" class="doc-link">
+                            Elenco Ville di Lanciano (Mozzagrogna non presente)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documenti/catasti/1618 Santa Vittoria (famiglie).jpg" class="doc-link">
+                            Famiglie con proprietà a Santa Vittoria
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documenti/catasti/1618 - Catasto onciario di Matteo Romagnoli.jpg" class="doc-link">
+                            Estratto catastale di Matteo Romagnoli
+                        </a>
+                    </li>
+                </ul>
+                
+                <h3>Famiglie Mozzagrogni (1618)</h3>
+                <ul class="document-list">
+                    <li>
+                        <a href="documenti/catasti/Mozzagrugni/Fabrizio e Cesare.jpg" class="doc-link">
+                            Fabrizio e Cesare Mozzagrogni
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documenti/catasti/Mozzagrugni/Nardo.jpg" class="doc-link">
+                            Nardo Mozzagrogni
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documenti/catasti/Mozzagrugni/Orazio.jpg" class="doc-link">
+                            Orazio Mozzagrogni
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documenti/catasti/Mozzagrugni/GiovanVittorio Giuseppe GivanAgostino.jpg" class="doc-link">
+                            GiovanVittorio, Giuseppe e GiovanAgostino Mozzagrogni
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section" id="mappe">
+                <h2>🗺️ Mappe Storiche Online</h2>
+                <p><em>Collegamenti a risorse cartografiche esterne</em></p>
+                
+                <h3>Mappe di Antonio Sciarretta</h3>
+                <ul class="document-list">
+                    <li>
+                        <a href="http://www.asciatopo.altervista.org/sanvito.html" class="doc-link external-link" target="_blank">
+                            <strong>Pagina generale</strong> - Geo-storia Costa dei Trabocchi
+                        </a>
+                        <ul style="margin-left: 30px; margin-top: 10px;">
+                            <li>Territorio disabitato (1180)</li>
+                            <li>Casale Santa Vittoria abitato (1320)</li>
+                            <li>Territorio nuovamente disabitato (1447)</li>
+                            <li>Evoluzione territoriale completa (1180-1860)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="http://www.asciatopo.altervista.org/Sanvito2.jpg" class="doc-link external-link" target="_blank">
+                            <strong>Mappe periodo 1648-1816</strong>
+                        </a>
+                        <ul style="margin-left: 30px; margin-top: 10px;">
+                            <li>Villa separata di Lanciano (1648)</li>
+                            <li>Comune delle Ville (1806)</li>
+                            <li>Separazione dei comuni (1816)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="http://www.asciatopo.altervista.org/Sanvito3.jpg" class="doc-link external-link" target="_blank">
+                            <strong>Mappe periodo moderno</strong>
+                        </a>
+                        <ul style="margin-left: 30px; margin-top: 10px;">
+                            <li>1881</li>
+                            <li>1927</li>
+                            <li>Oggi</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="http://www.asciatopo.altervista.org/Feudi-normanni-2.jpg" class="doc-link external-link" target="_blank">
+                            <strong>Signorie e Feudi</strong> - Anno 1180
+                        </a>
+                    </li>
+                </ul>
+                
+                <h3>Altre cartografie storiche</h3>
+                <ul class="document-list">
+                    <li>
+                        <a href="https://www.gruppoarcheologicokr.it/biblioteca/g-a-rizzi-zannoni-atlante-geografico-del-regno-di-napoli-tavola-n-31-1808/" class="doc-link external-link" target="_blank">
+                            <strong>Atlante Rizzi Zannoni</strong> - Area Lanciano (1808)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://gallica.bnf.fr/ark:/12148/btv1b53177632g/f1.item.zoom" class="doc-link external-link" target="_blank">
+                            <strong>Alexis-Hubert Jaillot</strong> - Le Royaume de Naples (1706)
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>📑 Altri Documenti</h2>
+                
+                <h3>Fonti Carabba</h3>
+                <ul class="document-list">
+                    <li>
+                        <a href="fonti/carabba/Regi Tabulari.jpg" class="doc-link">
+                            <strong>Regi Tabulari 1573</strong> - Villa Mozzagrogna (da F. Carabba, p. 211)
+                        </a>
+                    </li>
+                </ul>
+                
+                <h3>Fonti Pacichelli</h3>
+                <ul class="document-list">
+                    <li>
+                        <a href="fonti/pacichelli/1703_Pacichelli.pdf" class="doc-link">
+                            <strong>Del Regno di Napoli</strong> - menzione di "Bonagnoli" (1703, p. 9)
+                        </a>
+                    </li>
+                </ul>
+                
+                <h3>Fotografie storiche</h3>
+                <ul class="document-list">
+                    <li>
+                        <a href="foto/Chiesa di S Rocco (dopo la guerra).jpg" class="doc-link">
+                            Chiesa di S. Rocco dopo i bombardamenti (1944)
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>🔗 Tutti i Link Consultati</h2>
+                <p><em>Elenco completo delle risorse online citate nel libro</em></p>
+                
+                <ul class="document-list">
+                    <li>
+                        <a href="https://gallica.bnf.fr/ark:/12148/btv1b53177632g/f1.item.zoom" class="external-link" target="_blank">
+                            Gallica - Bibliothèque nationale de France: Carte du Royaume de Naples (A.H. Jaillot, 1706)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.gruppoarcheologicokr.it/biblioteca/g-a-rizzi-zannoni-atlante-geografico-del-regno-di-napoli-tavola-n-31-1808/" class="external-link" target="_blank">
+                            Gruppo Archeologico Krotoniate: Atlante Rizzi Zannoni (1808)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.instoria.it/home/abruzzo_XVII_secolo_epidemia_peste.htm" class="external-link" target="_blank">
+                            InStoria: L'Abruzzo nel XVII secolo - l'epidemia di peste
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://giosamenna.wordpress.com/2020/01/06/il-basso-sangro-in-una-cartografia-del-1702-osservazioni-e-note-storiche-parte-i/" class="external-link" target="_blank">
+                            Giosia Menna: Il Basso Sangro in una cartografia del 1702
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://catalogo.beniculturali.it/detail/ArchitecturalOrLandscapeHeritage/1600377037" class="external-link" target="_blank">
+                            Ministero della Cultura: Palazzo Mozzagrugno - Lucera
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.asciatopo.altervista.org/geostoria.html" class="external-link" target="_blank">
+                            Antonio Sciarretta: Atlante Storico d'Abruzzo
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://comunemozzagrogna.it/web/vivere-la-citta/cenni-storici-origini-evoluzione/" class="external-link" target="_blank">
+                            Comune di Mozzagrogna: Cenni storici
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://it.wikipedia.org/wiki/Abbazia_di_Santa_Maria_della_Vittoria" class="external-link" target="_blank">
+                            Wikipedia: Abbazia di Santa Maria della Vittoria
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://it.wikipedia.org/wiki/Chiesa_di_San_Rocco_(Mozzagrogna)" class="external-link" target="_blank">
+                            Wikipedia: Chiesa di San Rocco (Mozzagrogna)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://it.wikipedia.org/wiki/Gaio_Memmio" class="external-link" target="_blank">
+                            Wikipedia: Gaio Memmio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://it.wikipedia.org/wiki/Gens_Caesia" class="external-link" target="_blank">
+                            Wikipedia: Gens Caesia
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://it.wikipedia.org/wiki/Storia_della_Romagna" class="external-link" target="_blank">
+                            Wikipedia: Storia della Romagna
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://it.wikipedia.org/wiki/Storia_di_Lanciano" class="external-link" target="_blank">
+                            Wikipedia: Storia di Lanciano
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://it.wikipedia.org/wiki/Santa_Maria_Imbaro" class="external-link" target="_blank">
+                            Wikipedia: Santa Maria Imbaro
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://it.wikipedia.org/wiki/Terremoto_dell%27Italia_centro-meridionale_del_1456" class="external-link" target="_blank">
+                            Wikipedia: Terremoto dell'Italia centro-meridionale del 1456
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </div>
     </main>
 
     <footer>
-        <p>© 2025 Federico Romagnoli. Tutti i diritti riservati.<br>
-        Per informazioni: [tua email]<br>
-        <a href="https://github.com/[tuousername]/villaromagnoli">Repository GitHub</a></p>
+        <div class="container">
+            <p><strong>Villa Romagnoli - Storia di un Casale</strong><br>
+            © 2025 Federico Romagnoli. Tutti i diritti riservati.<br>
+            Per informazioni o segnalazioni: [inserire email]</p>
+        </div>
     </footer>
 </body>
 </html>
